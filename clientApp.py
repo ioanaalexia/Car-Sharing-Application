@@ -71,7 +71,6 @@ def client_mobile():
 
                 req = {"action": action}
 
-                # Handle logout separately
                 if action == "logout":
                     client.send(json.dumps(req).encode("utf-8"))
                     response = response_queue.get(timeout=5)
@@ -79,9 +78,8 @@ def client_mobile():
                     if response.get("message") == "Logout successful":
                         logged_in = False
                         selected_car = None
-                        continue  # Revine la meniul principal
+                        continue
 
-                # Handle end_rental with payment flow
                 elif action == "end_rental":
                     client.send(json.dumps(req).encode("utf-8"))
                     response = response_queue.get(timeout=5)
