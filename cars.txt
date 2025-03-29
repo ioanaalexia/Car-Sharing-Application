@@ -1,0 +1,2 @@
+1,Tesla Model 3,Electric,Rented
+2,BMW X5,SUV,Available
